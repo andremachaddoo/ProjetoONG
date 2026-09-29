@@ -82,3 +82,16 @@ export function iniciarNavegacao() {
     window.addEventListener("hashchange", navegar);
     navegar();
 }
+// Ativa e desativa o modo de alto contraste
+const botaoContraste = document.getElementById("botao-contraste");
+
+if (botaoContraste) {
+    botaoContraste.addEventListener("click", function () {
+        const contrasteAtivo = document.body.classList.toggle("alto-contraste");
+
+        botaoContraste.setAttribute(
+            "aria-pressed",
+            contrasteAtivo ? "true" : "false"
+        );
+    });
+}

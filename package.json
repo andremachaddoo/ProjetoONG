@@ -1,0 +1,12 @@
+{
+  "name": "projeto-ong-esperanca",
+  "private": true,
+  "scripts": {
+    "build": "powershell -NoProfile -File scripts/build.ps1",
+    "preview": "node scripts/preview.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "html-minifier-terser": "7.2.0"
+  }
+}

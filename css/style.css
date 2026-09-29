@@ -325,3 +325,42 @@ main.pagina-projetos {
 #formulario-cadastro input.campo-valido {
     border-color: #2e7d32;
 }
+
+/* Modo de alto contraste para acessibilidade */
+body.alto-contraste {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.alto-contraste header,
+body.alto-contraste main,
+body.alto-contraste footer,
+body.alto-contraste section,
+body.alto-contraste fieldset {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.alto-contraste a {
+    color: #ffff00;
+}
+
+body.alto-contraste input,
+body.alto-contraste select,
+body.alto-contraste textarea {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body.alto-contraste button {
+    background-color: #ffff00;
+    color: #000000;
+    border: 2px solid #ffffff;
+}
+
+/* Imagens responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
