@@ -20,3 +20,7 @@ O projeto apresenta um site para a ONG Esperança, utilizando HTML, CSS e JavaSc
 ## Versionamento
 
 O projeto utiliza Git para controle de versão e GitHub como repositório remoto.
+
+## Objetivo acadêmico
+
+Este projeto foi desenvolvido com o objetivo de aplicar conceitos de desenvolvimento web, organização de código e controle de versão utilizando Git e GitHub.
