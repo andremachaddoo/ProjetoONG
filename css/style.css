@@ -1,0 +1,327 @@
+:root {
+    /* Cores primárias */
+    --cor-primaria: #2E7D32;
+    --cor-primaria-escura: #1B5E20;
+
+    /* Cores secundárias */
+    --cor-secundaria: #F9A825;
+    --cor-secundaria-clara: #FDD835;
+
+    /* Cores neutras */
+    --cor-branco: #FFFFFF;
+    --cor-fundo: #F5F7F5;
+    --cor-texto: #263238;
+    --cor-cinza: #607D8B;
+
+    /* Tipografia */
+    --fonte-extra-grande: 2.5rem;
+    --fonte-grande: 2rem;
+    --fonte-media: 1.5rem;
+    --fonte-normal: 1rem;
+    --fonte-pequena: 0.875rem;
+
+    /* Espaçamentos */
+--espacamento-pequeno: 0.5rem;
+--espacamento-medio: 1rem;
+--espacamento-grande: 1.5rem;
+--espacamento-extra-grande: 2rem;
+--espacamento-enorme: 3rem;
+}
+
+/* Layout principal - Grid de 12 colunas */
+main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espacamento-grande);
+}
+
+main section {
+    grid-column: span 6;
+}
+/* Breakpoint 5 - Desktops menores */
+@media (max-width: 1200px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Breakpoint 4 - Notebooks e telas médias */
+@media (max-width: 1024px) {
+    main {
+        padding: var(--espacamento-grande);
+    }
+}
+
+/* Breakpoint 3 - Tablets */
+@media (max-width: 768px) {
+    main {
+        gap: var(--espacamento-grande);
+    }
+
+    main section {
+        grid-column: span 12;
+    }
+}
+
+/* Breakpoint 2 - Celulares maiores */
+@media (max-width: 600px) {
+    main {
+        gap: var(--espacamento-medio);
+    }
+}
+
+/* Breakpoint 1 - Celulares pequenos */
+@media (max-width: 480px) {
+    main {
+        gap: var(--espacamento-pequeno);
+    }
+
+    main section {
+        grid-column: span 12;
+    }
+}
+/* Componente Flexbox - Menu de navegação */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espacamento-grande);
+    flex-wrap: wrap;
+    padding: var(--espacamento-medio);
+}
+/* Componente Flexbox - Cabeçalho */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espacamento-pequeno);
+    padding: var(--espacamento-grande);
+    text-align: center;
+}
+/* Componente Flexbox - Rodapé */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--espacamento-grande);
+    text-align: center;
+}
+/* Navegação responsiva com Flexbox */
+
+.navegacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.menu-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espacamento-grande);
+}
+
+.menu-hamburguer {
+    display: none;
+    cursor: pointer;
+    font-size: var(--fonte-grande);
+    background: none;
+    border: none;
+}
+
+/* Efeito visual nos links */
+.menu-principal a {
+    transition: 0.3s;
+}
+
+.menu-principal a:hover,
+.menu-principal a:focus {
+    opacity: 0.7;
+}
+
+/* Menu para dispositivos móveis */
+@media (max-width: 600px) {
+    .navegacao {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-hamburguer {
+        display: block;
+    }
+
+    .menu-principal {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--espacamento-medio);
+    }
+
+    .menu-principal.ativo {
+        display: flex;
+    }
+}
+/* ========================================
+   FORMULÁRIOS E ESTADOS INTERATIVOS
+   ======================================== */
+
+   /* Layout específico da página de cadastro */
+main.pagina-cadastro {
+    display: block;
+}
+
+/* Organização visual do formulário */
+form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+fieldset {
+    margin-bottom: var(--espacamento-medio);
+    padding: var(--espacamento-medio);
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+/* Campos de texto do formulário */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 6px;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Estado de foco dos campos */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 5px rgba(25, 118, 210, 0.4);
+    outline: none;
+}
+
+/* Campo preenchido corretamente */
+input:valid:not([type="radio"]):not([type="checkbox"]) {
+    border-color: #2e7d32;
+}
+
+/* Campo inválido após interação */
+input:invalid:not(:placeholder-shown):not([type="radio"]):not([type="checkbox"]) {
+    border-color: #c62828;
+}
+
+/* Radio e checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+/* Botão de envio */
+button[type="submit"] {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1976d2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Mouse sobre o botão */
+button[type="submit"]:hover {
+    background-color: #125ea7;
+}
+
+/* Botão sendo pressionado */
+button[type="submit"]:active {
+    transform: scale(0.97);
+}
+
+/* Navegação pelo teclado */
+button[type="submit"]:focus {
+    outline: 3px solid #90caf9;
+    outline-offset: 2px;
+}
+
+/* Estado desabilitado */
+button[type="submit"]:disabled {
+    background-color: #aaaaaa;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Componente de feedback - Alerta de sucesso */
+.mensagem-sucesso {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 16px;
+    display: none;
+}
+
+/* Organização da página de projetos */
+main.pagina-projetos {
+    display: block;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+#lista-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+#lista-projetos .projeto-social {
+    grid-column: auto;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+    #lista-projetos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mensagens de validação */
+.erro-campo {
+    display: block;
+    color: #b71c1c;
+    font-size: 0.875rem;
+    margin-top: 6px;
+}
+
+.erro-campo[hidden] {
+    display: none;
+}
+
+/* Cores controladas pela validação JavaScript */
+#formulario-cadastro input.campo-invalido {
+    border-color: #c62828;
+}
+
+#formulario-cadastro input.campo-valido {
+    border-color: #2e7d32;
+}
