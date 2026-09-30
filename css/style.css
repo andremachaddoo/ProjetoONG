@@ -222,15 +222,17 @@ form {
 }
 
 fieldset {
-    margin-bottom: var(--espacamento-medio);
-    padding: var(--espacamento-medio);
-    border: 1px solid #cccccc;
-    border-radius: 8px;
+    margin-bottom: var(--espacamento-grande);
+    padding: var(--espacamento-grande);
+    background-color: var(--cor-branco);
+    border: 1px solid #dfe5df;
+    border-radius: 10px;
 }
 
 legend {
     font-weight: bold;
     padding: 0 8px;
+    color: var(--cor-primaria-escura);
 }
 
 /* Campos de texto do formulário */
@@ -279,7 +281,7 @@ button[type="submit"] {
     padding: 12px 24px;
     border: none;
     border-radius: 6px;
-    background-color: #1976d2;
+    background-color: var(--cor-primaria);
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -288,7 +290,7 @@ button[type="submit"] {
 
 /* Mouse sobre o botão */
 button[type="submit"]:hover {
-    background-color: #125ea7;
+    background-color: var(--cor-primaria-escura);
 }
 
 /* Botão sendo pressionado */
@@ -325,7 +327,7 @@ main.pagina-projetos {
     display: block;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 24px;
+    padding: var(--espacamento-extra-grande) var(--espacamento-grande);
 }
 
 #lista-projetos {
@@ -336,9 +338,11 @@ main.pagina-projetos {
 
 #lista-projetos .projeto-social {
     grid-column: auto;
-    padding: 20px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
+    padding: var(--espacamento-grande);
+    background-color: var(--cor-branco);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 @media (max-width: 600px) {
@@ -414,4 +418,11 @@ img {
     display: block;
     margin-top: var(--espacamento-medio);
     border-radius: 8px;
+}
+
+.imagem-voluntarios,
+.imagem-missao {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
 }
