@@ -32,6 +32,8 @@ body {
     margin: 0;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
 }
 
 /* Layout principal - Grid de 12 colunas */
@@ -44,13 +46,20 @@ main {
     margin: 0 auto;
     padding: var(--espacamento-grande);
 }
+main {
+    align-items: start;
+}
 
 main section {
     grid-column: span 6;
     background-color: var(--cor-branco);
-    padding: var(--espacamento-grande);
+    padding: var(--espacamento-extra-grande);
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+main:not(.pagina-cadastro):not(.pagina-projetos) section p {
+    line-height: 1.6;
 }
 
 /* Breakpoint 4 - Notebooks e telas médias */
@@ -154,6 +163,23 @@ footer {
 
 .menu-principal a:hover,
 .menu-principal a:focus {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+}
+
+#botao-contraste {
+    padding: 8px 12px;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 6px;
+    background-color: var(--cor-branco);
+    color: var(--cor-primaria-escura);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#botao-contraste:hover,
+#botao-contraste:focus {
     background-color: var(--cor-primaria);
     color: var(--cor-branco);
 }
@@ -377,11 +403,14 @@ body.alto-contraste button {
 
 /* Imagens responsivas */
 img {
+    display: block;
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
 }
 
-.imagem-voluntarios {
+.imagem-voluntarios,
+.imagem-missao {
     display: block;
     margin-top: var(--espacamento-medio);
     border-radius: 8px;
