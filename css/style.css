@@ -1,7 +1,7 @@
 :root {
     /* Cores primárias */
-    --cor-primaria: #2E7D32;
-    --cor-primaria-escura: #1B5E20;
+    --cor-primaria: #4F8A5B;
+    --cor-primaria-escura: #376B43;
 
     /* Cores secundárias */
     --cor-secundaria: #F9A825;
@@ -28,22 +28,29 @@
 --espacamento-enorme: 3rem;
 }
 
+body {
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
 /* Layout principal - Grid de 12 colunas */
 main {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: var(--espacamento-grande);
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--espacamento-grande);
 }
 
 main section {
     grid-column: span 6;
-}
-/* Breakpoint 5 - Desktops menores */
-@media (max-width: 1200px) {
-    main {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+    background-color: var(--cor-branco);
+    padding: var(--espacamento-grande);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 /* Breakpoint 4 - Notebooks e telas médias */
@@ -99,6 +106,9 @@ header {
     gap: var(--espacamento-pequeno);
     padding: var(--espacamento-grande);
     text-align: center;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    border-radius: 0 0 16px 16px;
 }
 /* Componente Flexbox - Rodapé */
 footer {
@@ -134,12 +144,18 @@ footer {
 
 /* Efeito visual nos links */
 .menu-principal a {
+    color: var(--cor-primaria-escura);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
     transition: 0.3s;
 }
 
 .menu-principal a:hover,
 .menu-principal a:focus {
-    opacity: 0.7;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
 }
 
 /* Menu para dispositivos móveis */
@@ -363,4 +379,10 @@ body.alto-contraste button {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.imagem-voluntarios {
+    display: block;
+    margin-top: var(--espacamento-medio);
+    border-radius: 8px;
 }
